@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nomwendé Business | Maintenance informatique, formation et électronique</title>
+<meta name="description" content="Nomwendé Business : dépannage et maintenance informatique, formations, projets d'électronique et bibliothèque d'annales EII / BTS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2F5F7; --ink:#10222D; --deep:#0A3548; --blue:#0B4F6C;
+  --amber:#F2A900; --leaf:#2E7D4F; --line:#C9D4DB; --white:#fff;
+  --head:"Bricolage Grotesque","Trebuchet MS",Arial,sans-serif;
+  --body:"Source Sans 3","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.06rem/1.6 var(--body)}
+h1,h2,h3{font-family:var(--head);line-height:1.15;margin:0}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+/* En-tête */
+header{background:var(--deep);color:var(--white)}
+header .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+.brand{font:800 1.2rem var(--head);color:var(--white);text-decoration:none}
+nav{display:flex;flex-wrap:wrap;gap:4px 18px}
+nav a{color:#D6E4EC;text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}
+nav a:hover{color:var(--white);border-color:var(--amber)}
+
+/* Accueil */
+.hero{background:var(--deep);color:var(--white);padding:56px 0 0;overflow:hidden}
+.hero h1{font-size:clamp(2rem,5.5vw,3.6rem);font-weight:800;max-width:17ch}
+.hero p{max-width:52ch;color:#D6E4EC;font-size:1.15rem;margin:18px 0 26px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 22px;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid var(--amber)}
+.btn.main{background:var(--amber);color:var(--ink)}
+.btn.alt{color:var(--white)}
+.btn:hover{filter:brightness(1.1)}
+.wave{display:block;width:100%;height:auto;margin-top:34px}
+.wave path{fill:none;stroke-width:3;stroke-linecap:round}
+.wave .t1{stroke:var(--amber);stroke-dasharray:2600;stroke-dashoffset:2600;animation:draw 2.4s ease-out forwards}
+.wave .t2{stroke:#3E86A6;opacity:.7}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+/* Sections */
+section{padding:64px 0}
+section.tint{background:var(--white)}
+h2{font-size:clamp(1.6rem,3.5vw,2.2rem);margin-bottom:8px}
+.lead{max-width:60ch;color:#40545F;margin:0 0 30px}
+
+/* Services */
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px 36px}
+.services div{border-top:4px solid var(--amber);padding-top:12px}
+.services h3{font-size:1.2rem;margin-bottom:6px}
+.services p{margin:0}
+
+/* Projets */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.project{background:var(--paper);border-left:6px solid var(--blue);padding:18px 20px}
+.project:nth-child(2){border-color:var(--amber)}
+.project:nth-child(3){border-color:var(--leaf)}
+.project:nth-child(4){border-color:var(--deep)}
+.project h3{font-size:1.15rem;margin-bottom:6px}
+.project p{margin:0 0 10px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;padding:0;margin:0;list-style:none}
+.tags li{font-size:.85rem;background:var(--white);border:1px solid var(--line);border-radius:99px;padding:2px 10px}
+
+/* Bibliothèque */
+.tools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:16px}
+.tools input{flex:1 1 240px;padding:11px 14px;border:2px solid var(--line);border-radius:6px;font:inherit;background:var(--white)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.chip{font:inherit;font-size:.95rem;padding:6px 14px;border-radius:99px;border:2px solid var(--line);background:var(--white);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:var(--white)}
+#docs{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+#docs li{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;justify-content:space-between;padding:14px 4px;border-bottom:1px solid var(--line)}
+#docs strong{display:block}
+#docs small{color:#4B5F6A}
+#docs a{font-weight:600}
+#count{color:#4B5F6A;margin:0 0 10px}
+.empty{padding:20px 4px;color:#4B5F6A}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:36px}
+form{display:grid;gap:12px}
+label{font-weight:600}
+input,textarea{width:100%;padding:11px 14px;border:2px solid var(--line);border-radius:6px;font:inherit;background:var(--white)}
+textarea{min-height:120px;resize:vertical}
+button.send{justify-self:start;cursor:pointer;font:600 1rem var(--body);background:var(--blue);color:var(--white);border:0;border-radius:6px;padding:12px 24px}
+
+footer{background:var(--deep);color:#D6E4EC;padding:26px 0;font-size:.95rem}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .wave .t1{animation:none;stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">Nomwendé Business</a>
+    <nav aria-label="Navigation principale">
+      <a href="#services">Services</a>
+      <a href="#projets">Projets</a>
+      <a href="#bibliotheque">Bibliothèque</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <h1>Nous réparons, formons et construisons.</h1>
+      <p>Maintenance informatique, formations pratiques et systèmes électroniques sur mesure, à Ouagadougou. Un étudiant ingénieur en électronique et informatique industrielle vous répond directement.</p>
+      <div class="btns">
+        <a class="btn main" href="https://wa.me/226XXXXXXXX" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+        <a class="btn alt" href="#bibliotheque">Voir les annales et fiches</a>
+      </div>
+    </div>
+    <svg class="wave" viewBox="0 0 1200 160" preserveAspectRatio="none" aria-hidden="true">
+      <path class="t2" transform="translate(-60 8)" d="M0 80 C50 10 100 10 150 80 S250 150 300 80 S400 10 450 80 S550 150 600 80 S700 10 750 80 S850 150 900 80 S1000 10 1050 80 S1150 150 1200 80 S1300 10 1350 80"/>
+      <path class="t1" d="M0 80 C50 10 100 10 150 80 S250 150 300 80 S400 10 450 80 S550 150 600 80 S700 10 750 80 S850 150 900 80 S1000 10 1050 80 S1150 150 1200 80"/>
+    </svg>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <h2>Ce que nous faisons pour vous</h2>
+      <p class="lead">Des interventions claires, avec un devis annoncé avant de commencer. Tarifs sur demande.</p>
+      <div class="services">
+        <div><h3>Maintenance informatique</h3><p>Diagnostic, réparation, nettoyage, réinstallation système, sauvegarde et protection contre les virus.</p></div>
+        <div><h3>Formations pratiques</h3><p>Maintenance des ordinateurs, notions de réseaux et outils bureautiques, en présentiel et par petits groupes.</p></div>
+        <div><h3>Réseaux</h3><p>Configuration de routeurs, points d'accès et switchs, partage de connexion et dépannage de réseau local.</p></div>
+        <div><h3>Électronique sur mesure</h3><p>Cartes et systèmes embarqués, automatismes et prototypes conçus selon votre besoin.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projets" class="tint">
+    <div class="wrap">
+      <h2>Projets réalisés et en cours</h2>
+      <p class="lead">Chaque projet part d'un besoin réel. Voici ceux sur lesquels nous travaillons.</p>
+      <div class="projects">
+        <article class="project">
+          <h3>Réseau mesh LoRa d'urgence</h3>
+          <p>Un réseau de balises qui relaie un appel de détresse avec la position GPS, même sans réseau mobile.</p>
+          <ul class="tags"><li>LoRa</li><li>GPS</li><li>Bouton SOS</li></ul>
+        </article>
+        <article class="project">
+          <h3>Fusée expérimentale Nomwendé</h3>
+          <p>Modèle réduit de fusée avec avionique embarquée, propulsion et système de récupération.</p>
+          <ul class="tags"><li>Avionique</li><li>Propulsion</li><li>Récupération</li></ul>
+        </article>
+        <article class="project">
+          <h3>Couveuse et poussinière solaire</h3>
+          <p>Incubateur d'œufs alimenté par l'énergie solaire, pensé pour l'élevage avicole.</p>
+          <ul class="tags"><li>Solaire</li><li>Régulation</li><li>Élevage</li></ul>
+        </article>
+        <article class="project">
+          <h3>Boîte noire pour moto</h3>
+          <p>Module qui détecte un accident de moto et enregistre les données utiles.</p>
+          <ul class="tags"><li>Capteurs</li><li>Détection de choc</li><li>Enregistrement</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="bibliotheque">
+    <div class="wrap">
+      <h2>Bibliothèque d'annales et de fiches</h2>
+      <p class="lead">Sujets d'examen, corrigés et fiches de révision en électronique, informatique industrielle et réseaux. Recherchez par mot ou filtrez par matière.</p>
+      <div class="tools">
+        <input id="q" type="search" placeholder="Rechercher : diode, transistor, VLAN..." aria-label="Rechercher un document">
+      </div>
+      <div class="chips" id="chips" role="group" aria-label="Filtrer par matière"></div>
+      <p id="count" aria-live="polite"></p>
+      <ul id="docs"></ul>
+    </div>
+  </section>
+
+  <section id="contact" class="tint">
+    <div class="wrap">
+      <h2>Parlons de votre besoin</h2>
+      <p class="lead">Réponse rapide sur WhatsApp, ou laissez un message ici.</p>
+      <div class="contact">
+        <div>
+          <p><strong>WhatsApp</strong><br><a href="https://wa.me/226XXXXXXXX" target="_blank" rel="noopener">+226 XX XX XX XX</a></p>
+          <p><strong>E-mail</strong><br><a href="mailto:contact@exemple.com">contact@exemple.com</a></p>
+          <p><strong>Lieu</strong><br>Ouagadougou, Burkina Faso</p>
+        </div>
+        <form action="https://formspree.io/f/VOTRE_ID" method="POST">
+          <div><label for="nom">Votre nom</label><input id="nom" name="nom" required></div>
+          <div><label for="tel">Téléphone ou e-mail</label><input id="tel" name="contact" required></div>
+          <div><label for="msg">Votre message</label><textarea id="msg" name="message" required></textarea></div>
+          <button class="send" type="submit">Envoyer le message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Nomwendé Business. Site réalisé par Savadogo Nomwendé Amédée.</div>
+</footer>
+
+<script>
+/* ===== À MODIFIER : votre liste de documents =====
+   titre, matiere, niveau, type (Annale / Corrigé / Fiche), lien (chemin du PDF ou lien Drive) */
+const DOCS = [
+  {titre:"Annale électronique analogique (exemple)", matiere:"Électronique analogique", niveau:"Licence 2", type:"Annale", lien:"docs/analogique-annale.pdf"},
+  {titre:"Fiche : diodes et redressement (exemple)", matiere:"Électronique analogique", niveau:"Licence 2", type:"Fiche", lien:"docs/diodes-fiche.pdf"},
+  {titre:"Annale électronique numérique (exemple)", matiere:"Électronique numérique", niveau:"Licence 1", type:"Annale", lien:"docs/numerique-annale.pdf"},
+  {titre:"Corrigé : logique combinatoire (exemple)", matiere:"Électronique numérique", niveau:"Licence 1", type:"Corrigé", lien:"docs/logique-corrige.pdf"},
+  {titre:"Fiche : adressage IP et sous-réseaux (exemple)", matiere:"Réseaux", niveau:"Licence 2", type:"Fiche", lien:"docs/reseaux-ip-fiche.pdf"},
+  {titre:"Annale automatisme et API (exemple)", matiere:"Automatisme", niveau:"BTS", type:"Annale", lien:"docs/automatisme-annale.pdf"},
+  {titre:"Fiche : hacheurs et onduleurs (exemple)", matiere:"Électronique de puissance", niveau:"Licence 2", type:"Fiche", lien:"docs/puissance-fiche.pdf"}
+];
+
+const chipsEl = document.getElementById("chips");
+const listEl = document.getElementById("docs");
+const countEl = document.getElementById("count");
+const qEl = document.getElementById("q");
+let matiere = "Toutes";
+
+const matieres = ["Toutes", ...new Set(DOCS.map(d => d.matiere))];
+matieres.forEach(m => {
+  const b = document.createElement("button");
+  b.className = "chip"; b.type = "button"; b.textContent = m;
+  b.setAttribute("aria-pressed", m === matiere);
+  b.onclick = () => {
+    matiere = m;
+    chipsEl.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c.textContent === m));
+    render();
+  };
+  chipsEl.appendChild(b);
+});
+
+function render(){
+  const q = qEl.value.trim().toLowerCase();
+  const res = DOCS.filter(d =>
+    (matiere === "Toutes" || d.matiere === matiere) &&
+    (d.titre + " " + d.matiere + " " + d.niveau + " " + d.type).toLowerCase().includes(q));
+  countEl.textContent = res.length + " document" + (res.length > 1 ? "s" : "");
+  listEl.innerHTML = res.length ? "" : '<li class="empty">Aucun document trouvé. Essayez un autre mot ou une autre matière.</li>';
+  res.forEach(d => {
+    const li = document.createElement("li");
+    const info = document.createElement("div");
+    const t = document.createElement("strong"); t.textContent = d.titre;
+    const s = document.createElement("small"); s.textContent = d.type + ", " + d.matiere + ", " + d.niveau;
+    info.append(t, s);
+    const a = document.createElement("a");
+    a.href = d.lien; a.textContent = "Télécharger"; a.setAttribute("download", "");
+    li.append(info, a);
+    listEl.appendChild(li);
+  });
+}
+qEl.addEventListener("input", render);
+render();
+</script>
+</body>
+</html>
